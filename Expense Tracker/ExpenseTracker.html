@@ -57,22 +57,247 @@
 			left:92px;
 			font-size: large;
 		}
+		#box{
+			height: 20px;
+			width: 40px;
+			background: red;
+			position: absolute;
+			top: 350px;
+			left:492px;
+		}
+		#p10{
+			position: absolute;
+			top: 50px;
+			left:300px;
+		}
+		#p11{
+			position: absolute;
+			top: 72px;
+			left:300px;
+		}
+		#p12
+		{
+			height: 60px;
+			width:850px;
+			background-color: white;
+			position: absolute;
+			top: 142px;
+			left:400px;
+			border-radius: 20px;
+		}
+		#line
+		{
+			height: 35px;
+			width:3px;
+			background-color: rgb(24, 18, 18);
+			position:relative;
+			top: 162px;
+			left:800px;
+			z-index: 10;
+			opacity: .5;
+		}
+		#p13{
+			position: absolute;
+			top: 142px;
+			left:550px;
+			font-size: 20px;
+		}
+		#p14{
+			position: absolute;
+			top: 142px;
+			left:950px;
+			font-size: 20px;
+		}
+		#p15{
+			position: absolute;
+			top: 167px;
+			left:580px;
+			font-size: 20px;
+			color: green;
+		}
+		#p16{
+			position: absolute;
+			top: 167px;
+			left:980px;
+			font-size: 20px;
+			color: red;
+		}
+		#p17{
+			position: absolute;
+			top: 222px;
+			left:300px;
+			font-size: 20px;
+			color: rgb(12, 12, 12);
+		}
+	#line1{
+		position: absolute;
+			top: 252px;
+			left:300px;
+			height: 3px;
+			width: 720px;
+			background-color: rgb(10, 10, 10);
+	}
+	#p18{
+		position: absolute;
+			top: 282px;
+			left:300px;
+			font-size: larger;
+			
+	}
+	#p19{
+		position: absolute;
+			top: 300px;
+			left:430px;
+			font-size: larger;
+			
+	}
+	#p20{
+		position: absolute;
+			top: 325px;
+			left:300px;
+			font-size: larger;
+			
+	}
+	#p21{
+		position: absolute;
+			top: 342px;
+			left:430px;
+			font-size: larger;
+			
+	}
+	#p22{
+		position: absolute;
+			top: 362px;
+			left:300px;
+			font-size: larger;
+			
+	}
+	#p23{
+		position: absolute;
+			top: 382px;
+			left:430px;
+			font-size: larger;
+			
+	}
+	#p23{
+		position: absolute;
+			top: 382px;
+			left:430px;
+			font-size: larger;
+			
+	}
+	#p24{
+		position: absolute;
+			top: 422px;
+			left:430px;
+			font-size: larger;
+			height: 30px;
+			width: 300px;
+			background: rgb(223, 54, 223);
+	}
+	#p25{
+		position: absolute;
+			top: 442px;
+			left:300px;
+			font-size: larger;
+		
+	}
+	#line2{
+	position: absolute;
+			top: 467px;
+			left:300px;
+			height: 3px;
+			width: 720px;
+			background-color: rgb(10, 10, 10);
+	}
+	table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+			position: absolute;
+			top: 487px;
+			left:300px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgray;
+        }
 	</style>
+
 </head>
-<body>
+<body style="background-color: rgb(197, 192, 192);">
 	<div style="height: 625px;width: 250px;background-color: aqua;">
  
 		<div>
-			<img id="p2" src="dashboard.png" height="100px">
-			<p id="p3"><b>DASHBOARD</b></p>
-			<img id="p4" src="Transaction.png" height="80px">
-			<p id="p5"><b>TRANSACTIONS</b></p>
-			<img id="p6" src="setting.png" height="70px">
-			<p id="p7"><b>SETTING</b></p>
-			<img id="p8" src="history.png" height="65px">
-			<p id="p9"><b>HISTORY</b></p>
+		<div style="background: red;">	<img id="p2" src="dashboard.png" height="100px">
+			<a href="#" onclick="alert('Button clicked')"><p id="p3"><b>DASHBOARD</b></p></div>
+			<img id="p4" src="Transaction.png" height="80px"></a>
+			<a href="#" onclick="Trans()"><p id="p5"><b>TRANSACTIONS</b></p>
+			<img id="p6" src="setting.png" height="70px"></a>
+			<a href="#" onclick="alert('Button clicked')"><p id="p7"><b>SETTING</b></p></a>
+			<a href="#" onclick="hist()"><img id="p8" src="history.png" height="65px">
+			<p id="p9"><b>HISTORY</b></p></a>
+			<p id="line"></p>
 		</div>
                </div>
+			   <div>
 			   <h3 id="p1">PROJECT EXPENSE TRACKING SOFTWARE</h3>
+			   </div>
+			   <div>
+				<h3 id="p10">YOUR BALANCE</h3>
+				<h2 id="p11">$0.00</h2>
+				<p id="box"><p id="p12"></p></p>
+				<p id="p13">INCOME</p>
+				<p id="p14">EXPENSE</p>
+				<p id="p15">0$</p>
+				<p id="p16">0$</p>
+				<p id="p17"><b>ADD NEW TRANSACTION</b></p>
+				<p id="line1"></p>
+				<p id="p18">Enter Name:</p>
+				<input id="p19" >
+				<p id="p20">Enter Amount:</p>
+				<input id="p21">
+				<p id="p22">Date:</p>
+				<input type="date" id="p23">
+				<button id="p24" onclick="addTransaction();return false;">Add Transaction</button>
+				<p id="p25"><b>HISTORY</b></p>
+				<p id="line2"></p>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Amount</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="p26">John Doe</td>
+							<td id="p27">Mathematics</td>
+							<td id="p28">85</td>
+						</tr>
+						</tbody>
+						</table>
+			   </div>
+			   <script>
+				function Trans()
+				{
+					document.getElementById("box").style.display="none";
+				}
+				var Balance=0.00;
+						
+				document.getElementById("p11").innerHTML=`$${Balance}`;
+				function addTransaction()
+				{
+					document.getElementById("p26").innerText=document.getElementById("p19").value;
+					document.getElementById("p27").innerText=document.getElementById("p21").value;
+					document.getElementById("p28").innerText=document.getElementById("p23").value;
+				}
+				
+			</script>
 	</body>
 </html>
