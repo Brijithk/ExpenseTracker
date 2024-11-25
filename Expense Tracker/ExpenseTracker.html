@@ -247,26 +247,26 @@
 			   <div>
 			   <h3 id="p1">PROJECT EXPENSE TRACKING SOFTWARE</h3>
 			   </div>
-			   <div>
+			   <div id="p29">
 				<h3 id="p10">YOUR BALANCE</h3>
 				<h2 id="p11">$0.00</h2>
 				<p id="box"><p id="p12"></p></p>
 				<p id="p13">INCOME</p>
 				<p id="p14">EXPENSE</p>
-				<p id="p15">0$</p>
+				<p id="p15">30000$</p>
 				<p id="p16">0$</p>
 				<p id="p17"><b>ADD NEW TRANSACTION</b></p>
 				<p id="line1"></p>
 				<p id="p18">Enter Name:</p>
 				<input id="p19" >
 				<p id="p20">Enter Amount:</p>
-				<input id="p21">
+				<input type="number" id="p21">
 				<p id="p22">Date:</p>
 				<input type="date" id="p23">
 				<button id="p24" onclick="addTransaction();return false;">Add Transaction</button>
 				<p id="p25"><b>HISTORY</b></p>
 				<p id="line2"></p>
-				<table>
+				<table id="p30">
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -277,27 +277,110 @@
 					<tbody>
 						<tr>
 							<td id="p26">John Doe</td>
-							<td id="p27">Mathematics</td>
-							<td id="p28">85</td>
+							<td id="p27">67</td>
+							<td id="p28">2024-11-12</td>
 						</tr>
 						</tbody>
 						</table>
 			   </div>
 			   <script>
+				var jamount=0;
+					const data = [
+            ["Name", "Amount", "Date"] // Header row
+        ];
+
 				function Trans()
 				{
+					document.getElementById("p29").style.display="block";
+					
 					document.getElementById("box").style.display="none";
+					const tables = document.querySelectorAll("table");
+            
+            // Loop through all tables
+            // tables.forEach(table => {
+            //     if (table.id !== "p30") {
+            //         // Hide or remove the table if it doesn't match the exclude ID
+            //         table.remove();
+            //     }
+            // });
+			document.getElementById("p30").style.display="block";
 				}
-				var Balance=0.00;
+				var Balance=0;
 						
 				document.getElementById("p11").innerHTML=`$${Balance}`;
 				function addTransaction()
 				{
-					document.getElementById("p26").innerText=document.getElementById("p19").value;
-					document.getElementById("p27").innerText=document.getElementById("p21").value;
-					document.getElementById("p28").innerText=document.getElementById("p23").value;
+			// 		document.getElementById("p26").innerText=document.getElementById("p19").value;
+			// 		document.getElementById("p27").innerText=document.getElementById("p21").value;
+			// 		document.getElementById("p28").innerText=document.getElementById("p23").value;
+			// 		const name = document.getElementById("p19").value;
+            // const subject = document.getElementById("p21").value;
+            // const marks = document.getElementById("p23").value;
+			// data.push([name, subject, marks]);
+			// console.log(data);
+			const name = document.getElementById("p19").value;
+            const amount = parseFloat(document.getElementById("p21").value);
+                 jamount+=amount;
+				 document.getElementById("p16").innerHTML=`$${jamount}`;
+				 var final=30000-jamount;
+				 document.getElementById("p11").innerHTML=`$${final}`;
+            const date = document.getElementById("p23").value;
+			const tableBody = document.querySelector("#p30 tbody");
+
+// Create a new row
+const newRow = document.createElement("tr");
+
+// Create and append cells for Name, Amount, and Date
+const nameCell = document.createElement("td");
+nameCell.textContent = name;
+newRow.appendChild(nameCell);
+
+const amountCell = document.createElement("td");
+amountCell.textContent = amount;
+newRow.appendChild(amountCell);
+
+const dateCell = document.createElement("td");
+dateCell.textContent = date;
+newRow.appendChild(dateCell);
+
+// Append the new row to the table body
+tableBody.appendChild(newRow);
+
+// Clear the input fields
+document.getElementById("p19").value = "";
+document.getElementById("p21").value = "";
+document.getElementById("p23").value = "";
 				}
-				
+				function hist()
+				{
+					document.getElementById("p29").style.display = "none";
+					document.getElementById("p30").style.display = "display";
+// Create a new table element
+// const table = document.createElement("table");
+
+// // Apply styles to the table (optional)
+// table.style.width = "50%";
+// table.style.borderCollapse = "collapse";
+// table.style.margin = "20px auto";
+
+// // Iterate through the array to create rows
+// data.forEach((row, rowIndex) => {
+// 	const tr = document.createElement("tr"); // Create a new row
+
+// 	// Iterate through each cell in the row
+// 	row.forEach(cell => {
+// 		const cellElement = rowIndex === 0 ? document.createElement("th") : document.createElement("td"); // Create header cells for the first row
+// 		cellElement.textContent = cell; // Set the cell text
+// 		cellElement.style.border = "1px solid black"; // Add border to cells
+// 		cellElement.style.padding = "10px"; // Add padding for better appearance
+// 		tr.appendChild(cellElement); // Append the cell to the row
+// 	});
+
+// 	table.appendChild(tr); // Append the row to the table
+// });
+// document.body.appendChild(table);
+				}
+			
 			</script>
 	</body>
 </html>
